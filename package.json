@@ -1,0 +1,20 @@
+{
+  "name": "1-cruize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx tailwindcss -i ./input.css -o ./css/main.css --watch",
+    "build": "npx tailwindcss -i ./input.css -o ./css/main.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "flowbite": "^1.7.0",
+    "uikit": "^3.16.22"
+  }
+}

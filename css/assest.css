@@ -1,0 +1,20 @@
+.del {
+    display: none;
+}
+
+.tabs {
+    display: none;
+}
+
+.tabs.activeb {
+    display: block;
+}
+
+label.activeb {
+    background-color: #19BABA;
+    color: white;
+}
+
+label.activeb:hover {
+    color: white;
+}

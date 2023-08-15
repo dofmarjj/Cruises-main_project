@@ -1,0 +1,88 @@
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea,
+#contact button[type="submit"] {
+    font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+    outline: none !important;
+}
+
+#contact {
+    background: #282828;
+    padding: 25px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 12px;
+}
+
+#contact h3 {
+    display: block;
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: white;
+}
+
+#contact h4 {
+    color: #868686;
+    margin: 5px 0 15px;
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+fieldset {
+    /* border: medium none !important; */
+    margin: 0 0 10px;
+    min-width: 100%;
+    padding: 0;
+    width: 100%;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea {
+    color: #19BABA;
+    font-size: 12px;
+    width: 100%;
+    border-bottom: 1px solid #86868680;
+    background: transparent;
+    margin: 0 0 5px;
+    padding: 10px;
+}
+
+
+
+#contact textarea {
+    height: 100px;
+    max-width: 100%;
+    resize: none;
+}
+
+#contact button[type="submit"] {
+
+    max-width: 145px;
+    cursor: pointer;
+    width: 100%;
+    border: 2px solid #07A19C;
+    border-radius: 12px;
+    background: transparent;
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    font-size: 15px;
+}
+
+
+
+
+.copyright {
+    text-align: center;
+}
+
+.active {
+    /* background: #19BABA; */
+    color: #FFF;
+}
