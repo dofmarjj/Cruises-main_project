@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FAQ</title>
+    <title>Cruises-Center</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./slider/slider.css" />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,10 +19,51 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap"
       rel="stylesheet" />
-    <link rel="stylesheet" href="./uikit-3.16.22/css/uikit-rtl.css" />
 
-    <!-- <link rel="stylesheet" href="./uikit-3.16.22/css/uikit-rtl.css" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pathway+Extreme:ital,wght@1,100&display=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="./css/form.css" />
+    <link rel="stylesheet" href="./css/assest.css" />
+    <link rel="stylesheet" href="css/galery.css" />
+
+    <link rel="stylesheet" href="./uikit-3.16.22/css/uikit-rtl.css" />
     <!-- <link rel="stylesheet" href="./uikit-3.16.22/css/uikit.css" /> -->
+    <!-- <link rel="stylesheet" href="./css/countries-slider.css" /> -->
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="./js/datepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/datepicker.css" />
+
+    <!-- <style>
+      .square-image {
+        width: 900px;
+        max-width: 320px;
+        border-radius: 12px;
+        height: auto;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+      .square-image:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+      }
+      .square-image.rectangle-image:after {
+        content: "";
+        display: block;
+        padding-bottom: 60%;
+      }
+    </style> -->
   </head>
   <body>
     <!-- Header  -->
@@ -130,7 +175,7 @@
         <!-- Menu Mobile -->
         <nav
           id="mobile-menu"
-          class="fixed left-0 top-0 right-0 bottom-0 justify-center items-center bg-white hidden">
+          class="fixed z-10 left-0 top-0 right-0 bottom-0 justify-center items-center bg-white hidden">
           <ul class="flex flex-col gap-5 items-center">
             <li><a href="" class="text-xl text-black">Круїзи</a></li>
             <li><a href="" class="text-xl text-black">Акції</a></li>
@@ -141,7 +186,9 @@
         </nav>
 
         <!-- Burger menu -->
-        <button id="burger" class="hidden group relative h-5 w-[30px] lg:block">
+        <button
+          id="burger"
+          class="hidden z-20 group relative h-5 w-[30px] lg:block">
           <span
             class="absolute bg-gray-300 h-[1px] left-0 w-full top-0 group-[.active]:translate-y-2 group-[.active]:rotate-45 transition-transform"></span>
           <span
@@ -160,7 +207,7 @@
             <h2 id="accordion-collapse-heading-1">
               <button
                 type="button"
-                class="flex items-center justify-between p-5 w-full font-medium text-left sp:bg-transparent"
+                class="flex items-center justify-between p-5 w-full font-medium text-left bg-transp"
                 data-accordion-target="#accordion-collapse-body-1"
                 aria-expanded="true"
                 aria-controls="accordion-collapse-body-1">
@@ -195,7 +242,7 @@
             <h2 id="accordion-collapse-heading-2">
               <button
                 type="button"
-                class="flex items-center justify-between p-5 w-full font-medium sp:bg-transparent"
+                class="flex items-center justify-between p-5 w-full font-medium bg-transp"
                 data-accordion-target="#accordion-collapse-body-2"
                 aria-expanded="false"
                 aria-controls="accordion-collapse-body-2">
@@ -231,7 +278,7 @@
             <h2 id="accordion-collapse-heading-3">
               <button
                 type="button"
-                class="flex items-center justify-between p-5 w-full font-medium sp:bg-transparent"
+                class="flex items-center justify-between p-5 w-full font-medium bg-transp"
                 data-accordion-target="#accordion-collapse-body-3"
                 aria-expanded="false"
                 aria-controls="accordion-collapse-body-3">
@@ -268,7 +315,7 @@
             <h2 id="accordion-collapse-heading-4">
               <button
                 type="button"
-                class="flex items-center justify-between p-5 w-full font-medium sp:bg-transparent"
+                class="flex items-center justify-between p-5 w-full font-medium bg-transp"
                 data-accordion-target="#accordion-collapse-body-4"
                 aria-expanded="false"
                 aria-controls="accordion-collapse-body-4">
@@ -304,7 +351,7 @@
             <h2 id="accordion-collapse-heading-5">
               <button
                 type="button"
-                class="flex items-center justify-between p-5 w-full font-medium sp:bg-transparent"
+                class="flex items-center justify-between p-5 w-full font-medium bg-transp"
                 data-accordion-target="#accordion-collapse-body-5"
                 aria-expanded="false"
                 aria-controls="accordion-collapse-body-5">
@@ -340,7 +387,7 @@
             <h2 id="accordion-collapse-heading-6">
               <button
                 type="button"
-                class="flex items-center justify-between p-5 w-full font-medium sp:bg-transparent"
+                class="flex items-center justify-between p-5 w-full font-medium bg-transp"
                 data-accordion-target="#accordion-collapse-body-6"
                 aria-expanded="false"
                 aria-controls="accordion-collapse-body-6">
@@ -904,6 +951,7 @@
         </div>
       </section>
     </footer>
+    <script src="./js/main.js"></script>
     <script src="./uikit-3.16.22/js/uikit-icons.js"></script>
     <script src="./uikit-3.16.22/js/uikit.js"></script>
   </body>

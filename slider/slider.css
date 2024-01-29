@@ -1,0 +1,51 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  /* text-rendering: optimizeSpeed; */
+  line-height: 1.5;
+}
+
+/* _______________________________________ */
+
+.swiper {
+  width: 400px;
+  height: 300px;
+}
+
+.swiper-slide {
+  color: white;
+  font-weight: 500;
+  align-items: center;
+}
+
+.swiper-scrollbar {
+  display: none;
+}
+
+.text-slide {
+  display: flex;
+  direction: ltr;
+}
+
+.slide-point {
+  margin-right: 5px;
+}
+
+.swiper-slide {
+  color: #f8f8f8ab;
+}
+
+.swiper-slide-next {
+  color: white;
+  margin-left: 20px;
+  font-size: 60px;
+  /* transition: all 0.4ms ease 0.1s; */
+}

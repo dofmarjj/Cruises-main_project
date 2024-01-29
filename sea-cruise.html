@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sea-Cruises</title>
+    <title>Cruises-Center</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./slider/slider.css" />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,10 +20,50 @@
       href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap"
       rel="stylesheet" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pathway+Extreme:ital,wght@1,100&display=swap"
+      rel="stylesheet" />
+
     <link rel="stylesheet" href="./css/form.css" />
+    <link rel="stylesheet" href="./css/assest.css" />
+    <link rel="stylesheet" href="css/galery.css" />
 
     <link rel="stylesheet" href="./uikit-3.16.22/css/uikit-rtl.css" />
-    <!-- <link rel="stylesheet" href="./uikit-3.16.22/css/uikit.css" /> -->
+    <link rel="stylesheet" href="./uikit-3.16.22/css/uikit.css" />
+    <!-- <link rel="stylesheet" href="./css/countries-slider.css" /> -->
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="./js/datepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/datepicker.css" />
+
+    <!-- <style>
+      .square-image {
+        width: 900px;
+        max-width: 320px;
+        border-radius: 12px;
+        height: auto;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+      .square-image:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+      }
+      .square-image.rectangle-image:after {
+        content: "";
+        display: block;
+        padding-bottom: 60%;
+      }
+    </style> -->
   </head>
   <body>
     <!-- Header  -->
@@ -78,7 +122,7 @@
 
         <!-- Logo -->
         <a
-          href="./index.html"
+          href="index.html"
           class="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] lg:hidden">
           <img src="./image/logo.png" alt="logo-cruises" />
         </a>
@@ -92,14 +136,14 @@
           <ul class="flex items-center gap-6">
             <li>
               <a
-                href="./sea-cruise.html"
+                href="sea-cruise.html"
                 class="text-[16px] leading-[17px] text-headerColor relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-white after:scale-0 hover:after:scale-100 hover:after:bg-mainColor hover:after:transition-transform hover:text-mainColor"
                 >Круїзи</a
               >
             </li>
             <li>
               <a
-                href="./promotions.html"
+                href="promotions.html"
                 class="text-[16px] leading-[17px] text-headerColor relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-white after:scale-0 hover:after:scale-100 hover:after:bg-mainColor hover:after:transition-transform hover:text-mainColor"
                 >Акції</a
               >
@@ -113,7 +157,7 @@
             </li>
             <li>
               <a
-                href="./faq.html"
+                href="contacts.html"
                 class="text-[16px] leading-[17px] text-headerColor relative after:absolute after:h-[1px] after:w-full after:left-0 after:-bottom-1 after:bg-white after:scale-0 hover:after:scale-100 hover:after:bg-mainColor hover:after:transition-transform white hover:text-mainColor"
                 >Контакти</a
               >
@@ -129,20 +173,59 @@
         </nav>
 
         <!-- Menu Mobile -->
-        <nav
-          id="mobile-menu"
-          class="fixed left-0 top-0 right-0 bottom-0 justify-center items-center bg-white hidden">
-          <ul class="flex flex-col gap-5 items-center">
-            <li><a href="" class="text-xl text-black">Круїзи</a></li>
-            <li><a href="" class="text-xl text-black">Акції</a></li>
-            <li><a href="" class="text-xl text-black">Новини</a></li>
-            <li><a href="" class="text-xl text-black">Контакти</a></li>
-            <li><a href="" class="text-xl text-black">Увійти</a></li>
-          </ul>
-        </nav>
-
+        <div id="mobile-menu" class="hidden z-40">
+          <nav uk-dropnav class="relative z-50">
+            <ul class="uk-subnav">
+              <li>
+                <a href="#" class="text-black"
+                  >UK <span uk-drop-parent-icon></span
+                ></a>
+                <div class="uk-dropdown rounded-xl">
+                  <ul class="uk-nav uk-dropdown-nav">
+                    <li class="uk-active"><a href="#">Eng</a></li>
+                    <li><a href="#">Fr</a></li>
+                    <li><a href="#">Ger</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a href="#">₴ <span uk-drop-parent-icon></span></a>
+                <div class="uk-dropdown rounded-xl">
+                  <ul
+                    class="uk-nav uk-dropdown-nav flex flex-col items-center r">
+                    <li class="uk-active"><a href="#">$</a></li>
+                    <li><a href="#">E</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <nav
+            class="flex fixed left-0 top-0 right-0 bottom-0 justify-center items-center bg-white">
+            <ul
+              class="flex flex-col gap-5 items-center h-[80%] overflow-auto w-full justify-center">
+              <li>
+                <a href="sea-cruise.html" class="text-xl text-black">Круїзи</a>
+              </li>
+              <li>
+                <a href="promotions.html" class="text-xl text-black">Акції</a>
+              </li>
+              <li><a href="news.html" class="text-xl text-black">Новини</a></li>
+              <li>
+                <a href="contacts.html" class="text-xl text-black">Контакти</a>
+              </li>
+              <li>
+                <a href="registration.html" class="text-xl text-black"
+                  >Увійти</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
         <!-- Burger menu -->
-        <button id="burger" class="hidden group relative h-5 w-[30px] lg:block">
+        <button
+          id="burger"
+          class="hidden group relative h-5 w-[30px] lg:block z-50">
           <span
             class="absolute bg-gray-300 h-[1px] left-0 w-full top-0 group-[.active]:translate-y-2 group-[.active]:rotate-45 transition-transform"></span>
           <span
@@ -162,7 +245,9 @@
 
         <!-- Pagination -->
 
-        <ul class="uk-pagination justify-center mt-[58px] pb-8 gap-1" uk-margin>
+        <ul
+          class="uk-pagination justify-center mt-[58px] pb-8 gap-1 paginator"
+          uk-margin>
           <li>
             <a href="#"><span uk-pagination-previous></span></a>
           </li>
@@ -235,15 +320,30 @@
 
         <!-- Main filter -->
 
-        <div id="toggle-animation" class="uk-hidden lg:hidden">
-          <div class="mt-14">
-            <hr />
-          </div>
+        <div id="toggle-animation" class="uk-hidden">
+          <hr class="mt-14" />
+
           <div>
             <div class="container">
+              <!-- Select Cruises Type -->
+
               <div
-                class="flex flex-row justify-between lg:flex-col lg:grid lg:grid-rows-3">
-                <div>
+                class="btn-lab mx-auto mb-5 flex flex-row justify-center gap-3">
+                <button
+                  id="btn-type"
+                  class="btn min-w-[15%] px-8 py-4 bg-transparent border-2 border-mainColor text-black rounded-lg text-sm hover:bg-[#19babac9] hover:text-black active-bg">
+                  Морсккие
+                </button>
+                <button
+                  id="btn-type2"
+                  class="btn min-w-[15%] px-8 py-4 bg-transparent border-2 border-mainColor text-black rounded-lg text-sm hover:bg-[#19babac9] hover:text-black">
+                  Речные
+                </button>
+              </div>
+              <!-- Select Cruises Type -->
+              <div
+                class="flex flex-row justify-between gap-5 mb-4 md:flex-wrap md:justify-center">
+                <div id="region" class="region show">
                   <p>Регіон</p>
                   <div class="flex items-center mb-4 mt-[21px]">
                     <input
@@ -327,6 +427,33 @@
                       for="default-checkbox"
                       class="ml-2 text-sm font-medium text-gray-900"
                       >Кариби</label
+                    >
+                  </div>
+                </div>
+                <div id="river" class="river hidden">
+                  <p>Реки</p>
+                  <div class="flex items-center mb-4 mt-[21px]">
+                    <input
+                      id="default-checkbox"
+                      type="checkbox"
+                      value=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" />
+                    <label
+                      for="default-checkbox"
+                      class="ml-2 text-sm font-medium text-gray-900"
+                      >Дунай</label
+                    >
+                  </div>
+                  <div class="flex items-center mb-4">
+                    <input
+                      id="default-checkbox"
+                      type="checkbox"
+                      value=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" />
+                    <label
+                      for="default-checkbox"
+                      class="ml-2 text-sm font-medium text-gray-900"
+                      >Днепр</label
                     >
                   </div>
                 </div>
@@ -504,19 +631,103 @@
                     >
                   </div>
                 </div>
-                <div>
-                  <p>Дата Відправлення</p>
-
-                  <img src="./image/calendar.png" alt="" class="mt-[21px]" />
-                </div>
               </div>
+
+              <!-- Box-choise -->
+              <div
+                class="flex flex-row justify-between lg:w-[90%] lg:mx-auto lg:grid lg:grid-cols-2 lg:gap-2">
+                <!-- Data picker -->
+                <div>
+                  <p class="mb-2 sm:text-sm">Дата Відправлення</p>
+
+                  <div class="relative max-w-sm">
+                    <div
+                      class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                      <svg
+                        class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 20 20">
+                        <path
+                          d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                      </svg>
+                    </div>
+                    <input
+                      datepicker
+                      datepicker-autohide
+                      type="text"
+                      class="bg-transparent border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-white dark:border-gray-400 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500"
+                      placeholder="Виберiть дату" />
+                  </div>
+                </div>
+
+                <!-- / Date picker-->
+
+                <!-- Select box -->
+                <div class="cursor-pointer max-w-sm sm:max-w-[10rem]">
+                  <p class="mb-2 sm:text-sm">Компанiя</p>
+                  <select
+                    class="cursor-pointer w-full p-[10px] border border-gray-400 rounded-lg"
+                    data-te-select-init>
+                    <option value="1" class="text-sm">MSC Cruises</option>
+                    <option value="2" class="text-sm">Celebrity Cruises</option>
+                    <option value="3" class="text-sm">Royal Caribbean</option>
+                  </select>
+                </div>
+                <div class="cursor-pointer max-w-sm sm:max-w-[10rem]">
+                  <p class="mb-2 sm:text-sm">Лайнери</p>
+                  <select
+                    class="cursor-pointer w-full p-[10px] border border-gray-400 rounded-lg"
+                    data-te-select-init>
+                    <option value="1" class="text-sm">MSC Simfonia</option>
+                    <option value="2" class="text-sm">MSC Lirica</option>
+                    <option value="3" class="text-sm">MSC Opera</option>
+                    <option value="4" class="text-sm">MSC Seaside</option>
+                  </select>
+                </div>
+                <div class="cursor-pointer max-w-sm sm:max-w-[10rem]">
+                  <p class="mb-2 sm:text-sm">Порт</p>
+                  <select
+                    class="cursor-pointer w-full p-[10px] border border-gray-400 rounded-lg"
+                    data-te-select-init>
+                    <option value="1" class="text-sm">Дубай</option>
+                    <option value="2" class="text-sm">Ломе</option>
+                    <option value="3" class="text-sm">Сплит</option>
+                    <option value="4" class="text-sm">Джидда</option>
+                  </select>
+                </div>
+                <div class="cursor-pointer max-w-sm sm:max-w-[10rem]">
+                  <p class="mb-2 sm:text-sm">Міста що відвідуються</p>
+                  <select
+                    class="cursor-pointer w-full p-[10px] border border-gray-400 rounded-lg"
+                    data-te-select-init>
+                    <option value="2" class="text-sm">Ломе</option>
+                    <option value="1" class="text-sm">Дубай</option>
+                    <option value="3" class="text-sm">Сплит</option>
+                    <option value="4" class="text-sm">Джидда</option>
+                  </select>
+                </div>
+                <div class="cursor-pointer max-w-sm sm:max-w-[10rem]">
+                  <p class="mb-2 sm:text-sm">Мова обслуговування</p>
+                  <select
+                    class="cursor-pointer w-full p-[10px] border border-gray-400 rounded-lg"
+                    data-te-select-init>
+                    <option value="1" class="text-sm">Англiйська</option>
+                    <option value="1" class="text-sm">Iталiйська</option>
+                  </select>
+                </div>
+                <!-- /Select box -->
+              </div>
+              <!-- /Box-choise -->
+
               <div class="mt-6">
                 <hr />
               </div>
 
               <!-- Price filter -->
 
-              <div class="mt-9 flex flex-row justify-between">
+              <div class="mt-9 flex flex-row justify-between lg:hidden">
                 <div class="flex flex-col items-start">
                   <p>Ціна</p>
                   <div class="flex flrx-row items-center mt-6 gap-6">
@@ -536,8 +747,10 @@
                 </div>
                 <div class="flex flex-col items-start">
                   <p>Валюта</p>
-                  <div class="flex flrx-row items-center mt-6 gap-6">
-                    <div class="flex flex-col items-center">
+                  <div class="flex flrx-row items-center mt-3 gap-6">
+                    <div
+                      id="dollar"
+                      class="cursor-pointer flex flex-col items-center p-[10px] border-2 border-transparent hover:border-[#19baba94] hover:rounded-xl">
                       <p>Доллар</p>
                       <svg
                         width="29"
@@ -551,7 +764,9 @@
                           fill="#19BABA" />
                       </svg>
                     </div>
-                    <div class="flex flex-col items-center">
+                    <!-- <div
+                      id="euro"
+                      class="w-full flex flex-col items-center p-[10px] border-2 border-transparent">
                       <p>Євро</p>
                       <svg
                         width="28"
@@ -564,8 +779,10 @@
                           d="M13.9526 27.9914C21.5816 27.9914 27.8979 21.6614 27.8979 14.0461C27.8979 6.41723 21.5679 0.10083 13.939 0.10083C6.32373 0.10083 0.00732422 6.41723 0.00732422 14.0461C0.00732422 21.6614 6.3374 27.9914 13.9526 27.9914ZM13.9526 25.6673C7.49952 25.6673 2.34522 20.4993 2.34522 14.0461C2.34522 7.59302 7.48584 2.42505 13.939 2.42505C20.3921 2.42505 25.5738 7.59302 25.5738 14.0461C25.5738 20.4993 20.4058 25.6673 13.9526 25.6673ZM14.2261 20.6497C16.5503 20.6497 18.396 19.6652 19.1069 17.6692C19.189 17.4504 19.2437 17.218 19.2437 16.9719C19.2437 16.4798 18.9018 16.1379 18.4096 16.1379C17.9448 16.1379 17.6714 16.3978 17.521 16.8626C17.1382 18.2571 15.7984 19.009 14.2808 19.009C11.9155 19.009 10.6304 16.7395 10.6304 14.0735C10.6304 11.4075 11.9429 9.16528 14.2808 9.16528C15.689 9.16528 17.0015 9.94458 17.4253 11.3528C17.5893 11.8723 17.8217 12.0637 18.3003 12.0637C18.8198 12.0637 19.1479 11.7356 19.1479 11.2297C19.1479 10.9973 19.0933 10.7649 19.0113 10.5461C18.3413 8.70043 16.4546 7.52466 14.2261 7.52466C10.9311 7.52466 8.79834 10.177 8.79834 14.0735C8.79834 17.8469 10.7534 20.6497 14.2261 20.6497ZM7.71827 13.3215H14.5405C14.9234 13.3215 15.2104 13.0207 15.2104 12.6516C15.2104 12.2414 14.9234 11.968 14.5405 11.968H7.71827C7.33545 11.968 7.04834 12.2414 7.04834 12.6516C7.04834 13.0207 7.33545 13.3215 7.71827 13.3215ZM7.71827 16.0969H14.5405C14.9234 16.0969 15.2104 15.7961 15.2104 15.4133C15.2104 15.0169 14.9234 14.7434 14.5405 14.7434H7.71827C7.33545 14.7434 7.04834 15.0169 7.04834 15.4133C7.04834 15.7961 7.33545 16.0969 7.71827 16.0969Z"
                           fill="#19BABA" />
                       </svg>
-                    </div>
-                    <div class="flex flex-col items-center">
+                    </div> -->
+                    <div
+                      id="crypto"
+                      class="cursor-pointer flex flex-col items-center p-[10px] border-2 border-transparent hover:border-[#19baba94] hover:rounded-xl">
                       <p>Крипто</p>
                       <svg
                         width="28"
@@ -583,33 +800,57 @@
                 </div>
                 <div class="flex flex-col items-start">
                   <p>Рейтинг Круїзу</p>
-                  <div class="flex flrx-row items-center mt-6 gap-6">
+                  <div class="flex flrx-row items-center mt-3 gap-6">
                     <div class="flex flex-row items-center gap-4">
-                      <button
-                        id="btn"
-                        class="border border-mainColor px-3 py-1 rounded-lg text-mainColor hover:bg-mainColor hover:text-white">
-                        1
-                      </button>
-                      <button
-                        id="btn"
-                        class="border border-mainColor px-3 py-1 rounded-lg text-mainColor hover:bg-mainColor hover:text-white">
-                        2
-                      </button>
-                      <button
-                        id="btn"
-                        class="border border-mainColor px-3 py-1 rounded-lg text-mainColor hover:bg-mainColor hover:text-white">
-                        3
-                      </button>
-                      <button
-                        id="btn"
-                        class="border border-mainColor px-3 py-1 rounded-lg text-mainColor hover:bg-mainColor hover:text-white">
-                        4
-                      </button>
-                      <button
-                        id="btn"
-                        class="border border-mainColor px-3 py-1 rounded-lg text-mainColor hover:bg-mainColor hover:text-white">
-                        5
-                      </button>
+                      <div class="simple-rating">
+                        <div class="simple-rating__items">
+                          <input
+                            class="simple-rating__item"
+                            id="simple-rating__5"
+                            name="simple-rating"
+                            type="radio"
+                            value="5" />
+                          <label
+                            for="simple-rating__5"
+                            class="simple-rating__label"></label>
+                          <input
+                            class="simple-rating__item"
+                            id="simple-rating__4"
+                            name="simple-rating"
+                            type="radio"
+                            value="4" />
+                          <label
+                            for="simple-rating__4"
+                            class="simple-rating__label"></label>
+                          <input
+                            class="simple-rating__item"
+                            id="simple-rating__3"
+                            name="simple-rating"
+                            type="radio"
+                            value="3" />
+                          <label
+                            for="simple-rating__3"
+                            class="simple-rating__label"></label>
+                          <input
+                            class="simple-rating__item"
+                            id="simple-rating__2"
+                            name="simple-rating"
+                            type="radio"
+                            value="2" />
+                          <label
+                            for="simple-rating__2"
+                            class="simple-rating__label"></label>
+                          <input
+                            class="simple-rating__item"
+                            id="simple-rating__1"
+                            name="simple-rating"
+                            type="radio"
+                            value="1" />
+                          <label
+                            for="simple-rating__1"
+                            class="simple-rating__label"></label>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -665,12 +906,17 @@
       <!-- content -->
       <div class="mt-14 container">
         <ul
-          class="grid grid-cols-4 gap-x-6 gap-y-28 w-full lg:gap-y-[22px] sm:grid-cols-2">
+          class="grid grid-cols-4 gap-x-6 gap-y-28 w-full lg:gap-y-[22px] sm:grid-cols-2 paginator">
           <li>
             <div class="bg-white shadow-xl rounded-xl hover:shadow-2xl">
               <div class="relative text-center">
                 <div
-                  class="absolute w-full h-full z-10 left-0 top-0 bg-gradient-to-b from-gray-800/5 to-black/70 rounded-[12px]"></div>
+                  class="absolute w-full h-full z-10 left-0 top-0 bg-gradient-to-b from-gray-800/5 to-black/70 rounded-[12px]">
+                  <div class="placement">
+                    <div class="heart"></div>
+                  </div>
+                </div>
+
                 <img class="w-full" src="./image/sea-cruise/Box-1.png" alt="" />
                 <div
                   class="absolute bottom-2 left-2 z-20 w-full lg:left-0 lg:px-2">
@@ -1606,7 +1852,9 @@
 
         <!-- Pagination -->
 
-        <ul class="uk-pagination justify-center my-[58px] gap-1" uk-margin>
+        <ul
+          class="uk-pagination justify-center my-[58px] gap-1 paginator"
+          uk-margin>
           <li>
             <a href="#"><span uk-pagination-previous></span></a>
           </li>
@@ -1679,8 +1927,8 @@
 
     <footer class="bg-[#131313]">
       <!-- Desktop footer -->
-      <section class="xs:hidden px-20 pb-6 pt-20">
-        <div class="flex justify-between">
+      <section class="container md:hidden px-20 pb-6 pt-20">
+        <div class="flex justify-between gap-5">
           <div class="flex h-[368px] flex-row gap-[100px] lg:gap-6">
             <nav>
               <p class="mb-8 text-[16px] text-[#B1B1B1]">
@@ -1954,7 +2202,7 @@
       </section>
 
       <!-- Mobile footer -->
-      <section class="hidden xs:flex xs:flex-col px-4 py-8 gap-10">
+      <section class="hidden md:flex md:flex-col px-4 py-8 gap-10">
         <div>
           <div class="flex flex-row gap-5">
             <img src="./image/logo.png" alt="" class="lg:w-[80px]" />
@@ -2194,15 +2442,20 @@
         </div>
       </section>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/babel-polyfill/dist/polyfill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vuetify/2.5.8/vuetify.min.js"></script>
 
     <script>
       document.getElementById("hideButton").onclick = function () {
         document.getElementById("hideButton").hidden = true;
       };
     </script>
-    <!-- <script src="./js/btn.js"></script> -->
 
     <script src="./uikit-3.16.22/js/uikit-icons.js"></script>
     <script src="./uikit-3.16.22/js/uikit.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/datepicker.min.js"></script>
   </body>
 </html>

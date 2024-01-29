@@ -5155,7 +5155,7 @@ select.uk-form-width-xsmall {
 }
 
 /* Desktop and bigger */
-@media (min-width: 1200px) {
+@media (min-width: 1300px) {
 
   /* Horizontal */
   .uk-grid {

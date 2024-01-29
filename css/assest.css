@@ -1,20 +1,251 @@
 .del {
-    display: none;
+  display: none;
 }
 
 .tabs {
-    display: none;
+  display: none;
 }
 
 .tabs.activeb {
-    display: block;
+  display: block;
 }
 
-label.activeb {
-    background-color: #19BABA;
-    color: white;
+.fix {
+  overflow: hidden;
 }
 
-label.activeb:hover {
-    color: white;
+li.activeb {
+  background-color: #19baba;
+  color: white;
+}
+
+a.activeb:hover {
+  color: white;
+}
+
+.active_money {
+  padding: 10px;
+  border: 2px solid #19baba;
+  border-radius: 12px;
+}
+
+.datepicker-picker {
+  background-color: white;
+  color: black;
+}
+
+.datepicker-controls button {
+  background-color: transparent;
+  color: black;
+}
+
+.datepicker-cell {
+  color: black;
+}
+.datepicker-cell:hover {
+  background-color: #19baba;
+  color: white;
+}
+
+.datepicker-cell.focused {
+  color: white;
+  background-color: #19baba;
+}
+
+.river {
+  display: none;
+}
+
+.region {
+  display: none;
+}
+
+.region.show {
+  display: block;
+}
+
+.river.show {
+  background-color: transparent;
+  display: block;
+}
+
+.hidden {
+  /* display: none; */
+}
+
+.active-bg {
+  background-color: #19baba;
+  display: block;
+}
+
+i {
+  transition: 0.25s ease !important;
+}
+.selected {
+  color: #8e24aa !important;
+  filter: drop-shadow(0 0 3px #666) !important;
+}
+
+/* rating style */
+
+.simple-rating {
+  position: relative;
+  font-size: 40px;
+  display: inline-block;
+}
+
+.simple-rating::before {
+  content: "★★★★★";
+  display: block;
+}
+
+.simple-rating__items {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  overflow: hidden;
+}
+
+.simple-rating__item {
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  /* opacity: 0; */
+  /* visibility: hidden; */
+  top: 10px;
+  left: 10px;
+}
+
+.simple-rating__label {
+  flex: 0 0 20%;
+  height: 100%;
+  cursor: pointer;
+  color: #666;
+}
+
+.simple-rating__label::before {
+  content: "★";
+  display: block;
+  transition: color 0.3s ease 0s;
+}
+
+.simple-rating__item:checked,
+.simple-rating__item:checked ~ .simple-rating__label {
+  color: #19baba;
+}
+
+.simple-rating__label:hover,
+.simple-rating__label:hover ~ .simple-rating__label,
+.simple-rating__label:checked ~ .simple-rating__label {
+  color: #19babacb;
+}
+
+/* Hurt */
+
+.heart {
+  width: 100px;
+  height: 100px;
+  background: url("https://cssanimation.rocks/images/posts/steps/heart.png")
+    no-repeat;
+  filter: drop-shadow(2px 4px 6px black);
+  background-position: 0 0;
+  cursor: pointer;
+  transition: background-position 1s steps(28);
+  transition-duration: 0s;
+}
+
+.heart.is-active {
+  transition-duration: 1s;
+  background-position: -2800px 0;
+}
+
+.placement {
+  position: absolute;
+  z-index: 100;
+  top: 1%;
+  right: 10px;
+  transform: translate(10%);
+}
+
+/* __________________ */
+
+:root {
+  --color-primary: #9a3b3b;
+  --color-secondary: #c08261;
+  --color-tertiary: #e2c799;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.btn.act,
+.btn:hover {
+  border-bottom: 1px solid #19baba;
+}
+.text-center {
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+.tab-nav ul.show {
+  display: block;
+}
+@media (min-width: 992px) {
+  .tab-nav {
+    max-width: 100%;
+    border: 0;
+  }
+  .tab-nav ul {
+    gap: 16px;
+    flex-direction: row;
+  }
+}
+
+.tab-content {
+  /* padding: 32px; */
+  margin-top: 20px;
+}
+
+.mobile-select.active::after {
+  transform: rotate(180deg);
+}
+@media (min-width: 992px) {
+  .mobile-select {
+    display: none;
+  }
+  .tab-nav ul {
+    display: flex;
+  }
+}
+
+.bg-transp {
+  background-color: transparent !important;
+}
+
+.paginator li span {
+  color: white;
+}
+
+.command-sl {
+  margin-left: 0 !important;
+}
+
+.command-sl li {
+  padding: 0;
 }
