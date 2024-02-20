@@ -71,3 +71,118 @@ buttonCountMinus4.onclick = function () {
     count4.innerHTML = number4;
   }
 };
+
+
+// add block info
+
+
+// function addBlock(parent) {
+//   const main = document.createElement("div")
+//   main.className = "partners"
+//   main.innerHTML = `
+//       <div>
+//         <h2 class="text-center">Дані пасажирів</h2>
+//         <p class="text-center text-base text-titleText mt-10">
+//           Пасажир 1<span class="text-black"> (Дорослий 55+)</span>
+//         </p>
+//         <form
+//           class="grid grid-cols-2 gap-y-4 gap-x-6 mt-9 max-w-[728px] mx-auto xs:flex xs:flex-col">
+//           <p class="flex flex-col text-[#212529] text-[12px]">
+//             <label
+//               ><input
+//                 type="text"
+//                 name="name"
+//                 class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
+//                 placeholder="Ім’я"
+//             /></label>
+//           </p>
+//           <p class="flex flex-col text-[#212529] text-[12px]">
+//             <label
+//               ><input
+//                 type="text"
+//                 name="name"
+//                 class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
+//                 placeholder="Громадянство"
+//             /></label>
+//           </p>
+//           <p class="flex flex-col text-[#212529] text-[12px]">
+//             <label
+//               ><input
+//                 type="text"
+//                 name="name"
+//                 class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
+//                 placeholder="Прізвище"
+//             /></label>
+//           </p>
+
+//           <p class="flex flex-col text-[#212529] text-[12px]">
+//             <label
+//               ><input
+//                 type="text"
+//                 name="name"
+//                 class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
+//                 placeholder="№ паспорту"
+//             /></label>
+//           </p>
+//           <p class="flex flex-col text-[#212529] text-[12px]">
+//             <label
+//               ><input
+//                 type="text"
+//                 name="name"
+//                 class="w-full border border-[#B1B1B1] rounded-lg py-2 px-3 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
+//                 placeholder="Дата народження"
+//             /></label>
+//           </p>
+//           <div class="flex flex-row justify-between gap-3">
+//             <p class="flex flex-col text-[#212529] text-[12px]">
+//               <label
+//                 ><input
+//                   type="text"
+//                   name="name"
+//                   class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
+//                   placeholder="Дата видачі"
+//               /></label>
+//             </p>
+//             <p class="flex flex-col text-[#212529] text-[12px]">
+//               <label
+//                 ><input
+//                   type="text"
+//                   name="name"
+//                   class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
+//                   placeholder="Дійсний до"
+//               /></label>
+//             </p>
+//           </div>
+//           <p class="flex flex-col text-[#212529] text-[12px]">
+//             <label
+//               ><input
+//                 type="text"
+//                 name="name"
+//                 class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-black mt-2"
+//                 placeholder="+380"
+//             /></label>
+//           </p>
+//           <p class="flex flex-col text-[#212529] text-[12px]">
+//             <label
+//               ><input
+//                 type="text"
+//                 name="name[]"
+//                 class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
+//                 placeholder="E-mail"
+//             /></label>
+//           </p>
+//         </form>
+//       </div>`
+
+//   main.getElementsByClassName("btn")[0].onclick = () => {
+//       parent.removeChild(main)
+//   }
+
+//   parent.appendChild(main)
+// }
+
+// document.getElementById("brand_plus").onclick = () => {
+//   addBlock(document.getElementById("partners_block"))
+// }
+
+// addBlock(document.getElementById("partners_block"))

@@ -41,6 +41,7 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="./js/datepicker.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/datepicker.css" />
 
     <!-- <style>
@@ -274,7 +275,7 @@
 
       <!-- Quantity of passengers -->
 
-      <section class="max-w-[1280px] mx-auto mt-24 xs:mt-10">
+      <section class="max-w-[1280px] container mx-auto mt-24 xs:mt-10 ">
         <h2 class="text-center text-[28px] text-titleText lg:text-xl">
           Кількість пасажирів
         </h2>
@@ -282,7 +283,12 @@
           class="flex flex-row justify-between px-16 mt-14 lg:max-w-[600px] mx-auto lg:gap-6 md:grid md:grid-cols-2">
           <li>
             <div class="flex flex-col items-center">
-              <p class="text-xl text-[#212529] lg:text-sm">Дорослі (55+)</p>
+              <p
+                class="text-xl text-[#212529] lg:text-sm type_pass"
+                data-type="adult_55"
+                value="1">
+                Дорослі (55+)
+              </p>
               <div
                 class="mt-6 flex flex-row justify-between items-center rounded-md">
                 <input
@@ -291,7 +297,13 @@
                   value="+"
                   class="w-[30px] h-[30px] border bg-white rounded-[50%] shadow-md hover:shadow-lg" />
                 <input type="hidden" value="0" id="num" name="num" />
-                <div id="buttonCountNumber1" class="px-6">0</div>
+                <div
+                  id="buttonCountNumber1"
+                  data-type="adult_55"
+                  value="Дорослі (55+)"
+                  class="px-6">
+                  2
+                </div>
                 <input
                   class="w-[30px] h-[30px] border bg-white rounded-[50%] shadow-md hover:shadow-lg"
                   type="button"
@@ -311,7 +323,13 @@
                   value="+"
                   class="w-[30px] h-[30px] border bg-white rounded-[50%] shadow-md hover:shadow-lg" />
                 <input type="hidden" value="0" id="num" name="num" />
-                <div id="buttonCountNumber2" class="px-6">0</div>
+                <div
+                  id="buttonCountNumber2"
+                  value="Дорослі (18+)"
+                  data-type="adult_18"
+                  class="px-6">
+                  1
+                </div>
                 <input
                   class="w-[30px] h-[30px] border bg-white rounded-[50%] shadow-md hover:shadow-lg"
                   type="button"
@@ -331,7 +349,12 @@
                   value="+"
                   class="w-[30px] h-[30px] border bg-white rounded-[50%] shadow-md hover:shadow-lg" />
                 <input type="hidden" value="0" id="numm" name="num" />
-                <div id="buttonCountNumber3" class="px-6">0</div>
+                <div
+                  id="buttonCountNumber3"
+                  value="Підлітки (12+)"
+                  class="px-6">
+                  0
+                </div>
                 <input
                   class="w-[30px] h-[30px] border bg-white rounded-[50%] shadow-md hover:shadow-lg"
                   type="button"
@@ -351,7 +374,9 @@
                   value="+"
                   class="w-[30px] h-[30px] border bg-white rounded-[50%] shadow-md hover:shadow-lg" />
                 <input type="hidden" value="0" id="num" name="num" />
-                <div id="buttonCountNumber4" class="px-6">0</div>
+                <div id="buttonCountNumber4" value="Діти (до 12)" class="px-6">
+                  0
+                </div>
                 <input
                   class="w-[30px] h-[30px] border bg-white rounded-[50%] shadow-md hover:shadow-lg"
                   type="button"
@@ -361,6 +386,31 @@
             </div>
           </li>
         </ul>
+
+        <div class="flex flex-col items-center">
+          <button
+            id="duplicateForms"
+            class="my-[77px] bg-mainColor text-[#E9F5F5] text-base py-[10px] px-9 rounded-2xl xs:w-full">
+            Далi
+          </button>
+        </div>
+      </section>
+
+      <!-- Cabin location -->
+      <section class="max-w-[1280px] mx-auto mt-24 xs:mt-10">
+        <div>
+          <h2 class="text-center text-titleText text-[28px] lg:text-xl">
+            Положення каюти
+          </h2>
+          <div id="filter-options" class="flex flex-row justify-evenly px-16 mt-14 lg:max-w-[600px] mx-auto lg:gap-6 md:grid md:grid-cols-2">
+            <button  class="text-base border-mainColor border px-3 py-4 rounded-md hover:bg-mainColor hover:text-white text-black" data-filter="any">Будь-яке положення</button>
+            <button  class="text-base border-mainColor border px-3 py-4 rounded-md hover:bg-mainColor hover:text-white text-black" data-filter="internal">Внутрішня</button>
+            <button  class="text-base border-mainColor border px-3 py-4 rounded-md hover:bg-mainColor hover:text-white text-black" data-filter="window">З вiкном</button>
+            <button  class="text-base border-mainColor border px-3 py-4 rounded-md hover:bg-mainColor hover:text-white text-black" data-filter="balkony">З балконом</button>
+            <button  class="text-base border-mainColor border px-3 py-4 rounded-md hover:bg-mainColor hover:text-white text-black" data-filter="suite">Сьют</button>
+            <button  id="clear-filters" class="text-base border-red-500 border px-3 py-4 rounded-md hover:bg-red-400 text-black" data-filter="suite">Очистить x</button>
+          </div>
+        </div>
       </section>
 
       <!-- Cabin choise -->
@@ -369,201 +419,178 @@
         <h2 class="text-center text-titleText text-[28px] lg:text-xl">
           Оберіть каюту
         </h2>
-        <ul
-          class="flex flex-row justify-between mt-14 lg:gap-4 md:grid md:grid-cols-2">
-          <li class="relative">
-            <div
-              class="absolute w-full h-[50%] z-1 left-0 bottom-0 bg-gradient-to-b from-transparent to-black/100 rounded-[12px]"></div>
-            <img
-              class="w-full bg-contain"
-              src="./image/cabin/cabin-1.png"
-              alt="cabin-1" />
-            <div
-              class="absolute bottom-2 text-[#E9F5F5] flex flex-row justify-between w-full px-2 items-center">
-              <div class="flex flex-col">
-                <p class="text-[12px]">Внутрішня</p>
-                <p class="text-[14px]">
-                  від
-                  <span class="text-mainColor text-[32px] lg:text-base"
-                    >519€</span
-                  >
+        <ul id="products" class="flex flex-col gap-4">
+          
+          <li class="flex flex-row gap-3 px-2 py-2 shadow-[0_3px_10px_rgb(0,0,0,0.2)] md:flex-col product-card phone any balkony">
+            <img  src="image/cabin/cabin-1.png" alt="" />
+            <div>
+              <div class="flex flex-col h-full justify-between py-2 px-4 ">
+                <h3>Каюта з балконом Ellara</h3>
+                <p>Площа приблизно 14-28 кв</p>
+                <p>
+                  Ванна кімната з душем, умивальник з феном Зручні двоспальні
+                  або односпальні ліжка (за запитом*) Інтерактивне телебачення,
+                  телефон, Wi-Fi (платно), сейф, міні-бар Розрахований на
+                  розміщення до 5 осіб *У деяких каютах для гостей з обмеженими
+                  фізичними можливостями або обмеженою рухливістю є 2
+                  односпальні ліжка, які не можна перетворити на двоспальні.
                 </p>
+
+                <hr />
+       
+                <div class="w-full text-right flex justify-between">
+                  <span class="text-4xl">500$</span>
+                  <button
+                    onclick="duplicateDivNTimes()"
+                    class="py-[15px] px-[30px] text-black border border-mainColor rounded-xl hover:bg-mainColor lg:py-2 lg:px-3 xs:text-xs">
+                    Обрати
+                  </button>
+                </div>
               </div>
-              <button
-                class="py-[15px] px-[30px] border border-mainColor rounded-xl hover:bg-mainColor lg:py-2 lg:px-3 xs:text-xs">
-                Обрати
-              </button>
+            
+            </div>
             </div>
           </li>
-          <li class="relative">
-            <div
-              class="absolute w-full h-[50%] z-1 left-0 bottom-0 bg-gradient-to-b from-transparent to-black/100 rounded-[12px]"></div>
-            <img
-              class="w-full bg-contain"
-              src="./image/cabin/cabin-2.png"
-              alt="cabin-2" />
-            <div
-              class="absolute bottom-2 text-[#E9F5F5] flex flex-row justify-between w-full px-2 items-center">
-              <div class="flex flex-col">
-                <p class="text-[12px]">З балконом</p>
-                <p class="text-[14px]">
-                  від
-                  <span class="text-mainColor text-[32px] lg:text-base"
-                    >519€</span
-                  >
+          <li class="flex flex-row gap-3 px-2 py-2 shadow-[0_3px_10px_rgb(0,0,0,0.2)] md:flex-col  product-card any suite">
+            <img src="image/cabin/cabin-2.png" alt="" />
+            <div>
+              <div class="flex flex-col h-full justify-between py-2 px-4 ">
+                <h3>Каюта з балконом Ellara</h3>
+                <p>Площа приблизно 14-28 кв</p>
+                <p>
+                  Ванна кімната з душем, умивальник з феном Зручні двоспальні
+                  або односпальні ліжка (за запитом*) Інтерактивне телебачення,
+                  телефон, Wi-Fi (платно), сейф, міні-бар Розрахований на
+                  розміщення до 5 осіб *У деяких каютах для гостей з обмеженими
+                  фізичними можливостями або обмеженою рухливістю є 2
+                  односпальні ліжка, які не можна перетворити на двоспальні.
                 </p>
+
+                <hr />
+       
+                <div class="w-full text-right flex justify-between">
+                  <span class="text-4xl">500$</span>
+                  <button
+                    onclick="duplicateDivNTimes()"
+                    class="py-[15px] px-[30px] text-black border border-mainColor rounded-xl hover:bg-mainColor lg:py-2 lg:px-3 xs:text-xs">
+                    Обрати
+                  </button>
+                </div>
               </div>
-              <button
-                class="py-[15px] px-[30px] border border-mainColor rounded-xl hover:bg-mainColor lg:py-2 lg:px-3 xs:text-xs">
-                Обрати
-              </button>
+            
             </div>
-          </li>
-          <li class="relative">
-            <div
-              class="absolute w-full h-[50%] z-1 left-0 bottom-0 bg-gradient-to-b from-transparent to-black/100 rounded-[12px]"></div>
-            <img
-              class="w-full bg-contain"
-              src="./image/cabin/cabin-3.png"
-              alt="cabin-3" />
-            <div
-              class="absolute bottom-2 text-[#E9F5F5] flex flex-row justify-between w-full px-2 items-center">
-              <div class="flex flex-col">
-                <p class="text-[12px]">З вікном</p>
-                <p class="text-[14px]">
-                  від
-                  <span class="text-mainColor text-[32px] lg:text-base"
-                    >519€</span
-                  >
-                </p>
-              </div>
-              <button
-                class="py-[15px] px-[30px] border border-mainColor rounded-xl hover:bg-mainColor lg:py-2 lg:px-3 xs:text-xs">
-                Обрати
-              </button>
-            </div>
-          </li>
-          <li class="relative">
-            <div
-              class="absolute w-full h-[50%] z-1 left-0 bottom-0 bg-gradient-to-b from-transparent to-black/100 rounded-[12px]"></div>
-            <img
-              class="w-full bg-contain"
-              src="./image/cabin/cabin-4.png"
-              alt="cabin-4" />
-            <div
-              class="absolute bottom-2 text-[#E9F5F5] flex flex-row justify-between w-full px-2 items-center">
-              <div class="flex flex-col">
-                <p class="text-[12px]">Сьют</p>
-                <p class="text-[14px]">
-                  від
-                  <span class="text-mainColor text-[32px] lg:text-base"
-                    >519€</span
-                  >
-                </p>
-              </div>
-              <button
-                class="py-[15px] px-[30px] border border-mainColor rounded-xl hover:bg-mainColor lg:py-2 lg:px-3 xs:text-xs">
-                Обрати
-              </button>
             </div>
           </li>
         </ul>
+       
       </section>
 
       <!-- Detals passenger -->
 
       <section class="max-w-[1280px] mx-auto mt-24 text-center container">
         <h2 class="text-center">Дані пасажирів</h2>
-        <p class="text-center text-base text-titleText mt-10">
-          Пасажир 1<span class="text-black"> (Дорослий 55+)</span>
-        </p>
-        <form
-          class="grid grid-cols-2 gap-y-4 gap-x-6 mt-9 max-w-[728px] mx-auto xs:flex xs:flex-col">
-          <p class="flex flex-col text-[#212529] text-[12px]">
-            <label
-              ><input
-                type="text"
-                name="name"
-                class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
-                placeholder="Ім’я"
-            /></label>
-          </p>
-          <p class="flex flex-col text-[#212529] text-[12px]">
-            <label
-              ><input
-                type="text"
-                name="name"
-                class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
-                placeholder="Громадянство"
-            /></label>
-          </p>
-          <p class="flex flex-col text-[#212529] text-[12px]">
-            <label
-              ><input
-                type="text"
-                name="name"
-                class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
-                placeholder="Прізвище"
-            /></label>
-          </p>
+        <div class="form-tpl hidden">
+          <div class="form-wrap">
+            <div class="" class="originalDiv">
+              <p class="text-center text-base text-titleText mt-10">
+                Пасажир <i class="num_pass">1</i>
+              </p>
+              <span class="text-black type_pass">Дорослі (55+)</span>
+              <form
+                class="grid grid-cols-2 gap-y-4 gap-x-6 mt-9 max-w-[728px] mx-auto xs:flex xs:flex-col">
+                <input type="hidden" name="age_type" value="adult_55" />
+                <p class="flex flex-col text-[#212529] text-[12px]">
+                  <label
+                    ><input
+                      type="text"
+                      name="name"
+                      class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
+                      placeholder="Ім’я"
+                  /></label>
+                </p>
+                <p class="flex flex-col text-[#212529] text-[12px]">
+                  <label
+                    ><input
+                      type="text"
+                      name="name"
+                      class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
+                      placeholder="Громадянство"
+                  /></label>
+                </p>
+                <p class="flex flex-col text-[#212529] text-[12px]">
+                  <label
+                    ><input
+                      type="text"
+                      name="name"
+                      class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
+                      placeholder="Прізвище"
+                  /></label>
+                </p>
 
-          <p class="flex flex-col text-[#212529] text-[12px]">
-            <label
-              ><input
-                type="text"
-                name="name"
-                class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
-                placeholder="№ паспорту"
-            /></label>
-          </p>
-          <p class="flex flex-col text-[#212529] text-[12px]">
-            <label
-              ><input
-                type="text"
-                name="name"
-                class="w-full border border-[#B1B1B1] rounded-lg py-2 px-3 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
-                placeholder="Дата народження"
-            /></label>
-          </p>
-          <div class="flex flex-row justify-between gap-3">
-            <p class="flex flex-col text-[#212529] text-[12px]">
-              <label
-                ><input
-                  type="text"
-                  name="name"
-                  class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
-                  placeholder="Дата видачі"
-              /></label>
-            </p>
-            <p class="flex flex-col text-[#212529] text-[12px]">
-              <label
-                ><input
-                  type="text"
-                  name="name"
-                  class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
-                  placeholder="Дійсний до"
-              /></label>
-            </p>
+                <p class="flex flex-col text-[#212529] text-[12px]">
+                  <label
+                    ><input
+                      type="text"
+                      name="name"
+                      class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
+                      placeholder="№ паспорту"
+                  /></label>
+                </p>
+                <p class="flex flex-col text-[#212529] text-[12px]">
+                  <label
+                    ><input
+                      type="text"
+                      name="name"
+                      class="w-full border border-[#B1B1B1] rounded-lg py-2 px-3 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
+                      placeholder="Дата народження"
+                  /></label>
+                </p>
+                <div class="flex flex-row justify-between gap-3">
+                  <p class="flex flex-col text-[#212529] text-[12px]">
+                    <label
+                      ><input
+                        type="text"
+                        name="name"
+                        class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
+                        placeholder="Дата видачі"
+                    /></label>
+                  </p>
+                  <p class="flex flex-col text-[#212529] text-[12px]">
+                    <label
+                      ><input
+                        type="text"
+                        name="name"
+                        class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
+                        placeholder="Дійсний до"
+                    /></label>
+                  </p>
+                </div>
+                <p class="flex flex-col text-[#212529] text-[12px]">
+                  <label
+                    ><input
+                      type="text"
+                      name="name"
+                      class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-black mt-2"
+                      placeholder="+380"
+                  /></label>
+                </p>
+                <p class="flex flex-col text-[#212529] text-[12px]">
+                  <label
+                    ><input
+                      type="text"
+                      name="name"
+                      class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
+                      placeholder="E-mail"
+                  /></label>
+                </p>
+              </form>
+            </div>
           </div>
-          <p class="flex flex-col text-[#212529] text-[12px]">
-            <label
-              ><input
-                type="text"
-                name="name"
-                class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-black mt-2"
-                placeholder="+380"
-            /></label>
-          </p>
-          <p class="flex flex-col text-[#212529] text-[12px]">
-            <label
-              ><input
-                type="text"
-                name="name"
-                class="w-full border rounded-lg py-2 border-[#B1B1B1] px-2 placeholder:text-[rgba(33, 37, 41, 0.10)] mt-2"
-                placeholder="E-mail"
-            /></label>
-          </p>
-        </form>
+        </div>
+        <div class="forms-output"></div>
+
+        <div id="formsContainer"></div>
+
         <div class="flex flex-col items-center">
           <button
             class="my-[77px] bg-mainColor text-[#E9F5F5] text-base py-[10px] px-9 rounded-2xl xs:w-full">
@@ -1289,6 +1316,8 @@
         );
       });
     </script>
+    <script src="/js/duplicate-form.js"></script>
+    <script src="/js/filter.js"></script>
     <script src="./js/main.js"></script>
     <script src="/js/slider.js"></script>
     <script src="./js/counter.js"></script>
