@@ -994,6 +994,10 @@ body {
   width: 310px;
 }
 
+.w-\[400px\] {
+  width: 400px;
+}
+
 .w-\[45\%\] {
   width: 45%;
 }
@@ -1524,6 +1528,11 @@ body {
 .bg-mainColor {
   --tw-bg-opacity: 1;
   background-color: rgb(25 186 186 / var(--tw-bg-opacity));
+}
+
+.bg-slate-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
 }
 
 .bg-slate-200 {
@@ -2340,6 +2349,11 @@ body {
   background-color: rgb(248 113 113 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-slate-200:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-transparent:hover {
   background-color: transparent;
 }
@@ -2694,8 +2708,17 @@ body {
     top: 20%;
   }
 
+  .md\:my-5 {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
   .md\:mb-4 {
     margin-bottom: 1rem;
+  }
+
+  .md\:mt-5 {
+    margin-top: 1.25rem;
   }
 
   .md\:block {
@@ -2720,6 +2743,10 @@ body {
 
   .md\:w-\[70\%\] {
     width: 70%;
+  }
+
+  .md\:w-auto {
+    width: auto;
   }
 
   .md\:w-full {
@@ -2759,6 +2786,11 @@ body {
     padding-right: 2.5rem;
   }
 
+  .md\:px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
   .md\:px-5 {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
@@ -2777,6 +2809,10 @@ body {
   .md\:py-4 {
     padding-top: 1rem;
     padding-bottom: 1rem;
+  }
+
+  .md\:text-center {
+    text-align: center;
   }
 
   .md\:text-\[10px\] {
@@ -2805,10 +2841,6 @@ body {
   .sm\:my-10 {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
-  }
-
-  .sm\:mt-10 {
-    margin-top: 2.5rem;
   }
 
   .sm\:mt-2 {
@@ -2996,10 +3028,6 @@ body {
 }
 
 @media (max-width: 479.99px) {
-  .xs\:left-0 {
-    left: 0px;
-  }
-
   .xs\:mt-10 {
     margin-top: 2.5rem;
   }

@@ -1,37 +1,47 @@
-$(document).ready(function(){
-    var selectedFilters = []; 
+$(document).ready(function () {
+  $(".typeFilter, .priceFilter").click(function () {
+    var $button = $(this);
+    var filterType = $button.hasClass("typeFilter") ? "type" : "color";
+    var filterValue = $button.data("filter");
 
-    function filterProducts() {
-        if(selectedFilters.length === 0) {
-            $('.product-card').show(); 
-        } else {
-            $('.product-card').hide(); 
-            selectedFilters.forEach(function(filter) {
-                $('.' + filter).show(); 
-            });
-        }
+    $button.toggleClass("active  bg-mainColor");
+
+    filterProducts();
+  });
+
+  function filterProducts() {
+    var selectedTypes = $(".typeFilter.active")
+      .map(function () {
+        return "." + $(this).data("filter");
+      })
+      .get()
+      .join(",");
+    var selectedColors = $(".priceFilter.active")
+      .map(function () {
+        return "." + $(this).data("filter");
+      })
+      .get()
+      .join(",");
+
+    var $filteredProducts = $(".product-card");
+    if (selectedTypes.length > 0) {
+      $filteredProducts = $filteredProducts.filter(selectedTypes);
+    }
+    if (selectedColors.length > 0) {
+      $filteredProducts = $filteredProducts.filter(selectedColors);
     }
 
+    $(".product-card").hide();
+    $filteredProducts.show();
 
-    $('#filter-options button').click(function() {
-        var filter = $(this).data('filter');
-        var index = selectedFilters.indexOf(filter);
-        
-       
-        if(index === -1) {
-            selectedFilters.push(filter);
-            $(this).addClass('btn-on bg-mainColor text-white'); 
-        } else {
-            selectedFilters.splice(index, 1); 
-            $(this).removeClass('btn-on bg-mainColor text-white'); 
-        }
-
-        filterProducts(); 
+    if ($filteredProducts.length === 0) {
+      $("#noResults").show();
+    } else {
+      $("#noResults").hide();
+    }
+    $("#clear-filters").click(function () {
+      $(".typeFilter, .priceFilter").removeClass("active  bg-mainColor");
+      filterProducts();
     });
-
-    $('#clear-filters').click(function() {
-        selectedFilters = []; 
-        $('#filter-options button').removeClass('btn-on bg-mainColor text-white'); // Удаляем класс активности у всех кнопок
-        filterProducts(); 
-    });
+  }
 });

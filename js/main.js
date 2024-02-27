@@ -1,4 +1,3 @@
-
 // var clonedDivs = [];
 // var duplicateCount = 0;
 // let times = document.getElementById("buttonCountNumber1").textContent;
@@ -97,100 +96,14 @@ button2.addEventListener("click", addClass2);
 
 // Hurt
 
-$(function () {
-  $(".heart").on("click", function () {
-    $(this).toggleClass("is-active");
-  });
-});
-
+// $(function () {
+//   $(".heart").on("click", function () {
+//     $(this).toggleClass("is-active");
+//   });
+// });
 
 function toggleClass(button) {
-  button.classList.toggle('bg-mainColor');
-  button.classList.toggle('text-white');
-  button.classList.toggle('btn-on');
+  button.classList.toggle("bg-mainColor");
+  button.classList.toggle("text-white");
+  button.classList.toggle("btn-on");
 }
-
-
-// 
-
-
-
-
-
-/*
-duplicateDivNTimes {
-  for (i = 1; i <= 4)
-    data = buttonCountNumber[i]
-    if (data.val > 0)
-      function duplicator(i, data[type])
-}
-
-function duplicator(i, type) {
-  html = duplicate.clone(.originalDiv)
-  html.num_pass = i
-  html.type_pass = type
-  append(html)
-}
-*/
-
-// function duplicateDivNTimes() {
-//   const quantityInputs = [
-//     document.getElementById('buttonCountNumber1'),
-//     document.getElementById('buttonCountNumber2'),
-//     document.getElementById('buttonCountNumber3'),
-//     document.getElementById('buttonCountNumber4')
-//   ];
-
-//   const originalDivs = [
-//     document.getElementById('originalDiv1'),
-//     document.getElementById('originalDiv2'),
-//     document.getElementById('originalDiv3'),
-//     document.getElementById('originalDiv4')
-//   ];
-
-//   const duplicatedDivsContainer = document.querySelector('.num_pass');
-  
-//   // Clear previously duplicated divs
-//   duplicatedDivsContainer.innerHTML = '';
-
-//   // Loop through each input field and its corresponding original div
-//   quantityInputs.forEach((quantityInput, index) => {
-//     const quantity = parseInt(quantityInput.textContent);
-
-//     // Show the original div
-//     // originalDivs[index].style.display = 'block';
-
-//     // Loop to duplicate the div 'quantity' number of times
-//     for (let i = 0; i < quantity; i++) {
-//       // Clone the original div
-//       const clonedDiv = originalDivs[index].cloneNode(true);
-
-//       // Increment the duplicate count
-//       duplicateCounts[index]++;
-
-//       // Update the text of the cloned div to show the count
-//       clonedDiv.innerText = `Duplicate ${duplicateCounts[index]} of ${originalDivs[index].innerText}`;
-
-//       // Append the cloned div to the container for duplicated divs
-//       duplicatedDivsContainer.appendChild(clonedDiv);
-//     }
-//   });
-// }
-
-// function clearResults() {
-//   // Hide the original divs
-//   document.querySelectorAll('.original-div').forEach(div => {
-//     div.style.display = 'none';
-//   });
-
-//   // Clear the container for duplicated divs
-//   document.getElementById('duplicatedDivs').innerHTML = '';
-
-//   // Reset the duplicate counts
-//   duplicateCounts = [0, 0, 0, 0];
-
-//   // Reset the quantity input values
-//   document.querySelectorAll('input[type="number"]').forEach(input => {
-//     input.value = 1;
-//   });
-// }

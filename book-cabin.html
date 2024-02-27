@@ -275,7 +275,7 @@
 
       <!-- Quantity of passengers -->
 
-      <section class="max-w-[1280px] container mx-auto mt-24 xs:mt-10 ">
+      <section class="max-w-[1280px] container mx-auto mt-24 xs:mt-10">
         <h2 class="text-center text-[28px] text-titleText lg:text-xl">
           Кількість пасажирів
         </h2>
@@ -402,13 +402,83 @@
           <h2 class="text-center text-titleText text-[28px] lg:text-xl">
             Положення каюти
           </h2>
-          <div id="filter-options" class="flex flex-row justify-evenly px-16 mt-14 lg:max-w-[600px] mx-auto lg:gap-6 md:grid md:grid-cols-2">
-            <button  class="text-base border-mainColor border px-3 py-4 rounded-md hover:bg-mainColor hover:text-white text-black" data-filter="any">Будь-яке положення</button>
-            <button  class="text-base border-mainColor border px-3 py-4 rounded-md hover:bg-mainColor hover:text-white text-black" data-filter="internal">Внутрішня</button>
-            <button  class="text-base border-mainColor border px-3 py-4 rounded-md hover:bg-mainColor hover:text-white text-black" data-filter="window">З вiкном</button>
-            <button  class="text-base border-mainColor border px-3 py-4 rounded-md hover:bg-mainColor hover:text-white text-black" data-filter="balkony">З балконом</button>
-            <button  class="text-base border-mainColor border px-3 py-4 rounded-md hover:bg-mainColor hover:text-white text-black" data-filter="suite">Сьют</button>
-            <button  id="clear-filters" class="text-base border-red-500 border px-3 py-4 rounded-md hover:bg-red-400 text-black" data-filter="suite">Очистить x</button>
+          <div
+            id="filter-options"
+            class="flex flex-row justify-evenly px-16 mt-14 lg:max-w-[600px] mx-auto lg:gap-6 md:grid md:grid-cols-2">
+            <button
+              class="typeFilter text-base border-mainColor border px-3 py-4 rounded-md hover:bg-mainColor hover:text-white text-black"
+              data-filter="all">
+              Будь-яке положення
+            </button>
+            <button
+              class="typeFilter text-base border-mainColor border px-3 py-4 rounded-md hover:bg-mainColor hover:text-white text-black"
+              data-filter="internal">
+              Внутрішня
+            </button>
+            <button
+              class="typeFilter text-base border-mainColor border px-3 py-4 rounded-md hover:bg-mainColor hover:text-white text-black"
+              data-filter="window">
+              З вiкном
+            </button>
+            <button
+              class="typeFilter text-base border-mainColor border px-3 py-4 rounded-md hover:bg-mainColor hover:text-white text-black"
+              data-filter="balkony">
+              З балконом
+            </button>
+            <button
+              class="typeFilter text-base border-mainColor border px-3 py-4 rounded-md hover:bg-mainColor hover:text-white text-black"
+              data-filter="suite">
+              Сьют
+            </button>
+            <!-- <button
+              id="clear-filters"
+              class="text-base border-red-500 border px-3 py-4 rounded-md hover:bg-red-400 text-black">
+              Очистити x
+            </button> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Price cabin -->
+
+      <section class="max-w-[1280px] mx-auto mt-24 xs:mt-10">
+        <div>
+          <h2 class="text-center text-titleText text-[28px] lg:text-xl">
+            Цiна каюти
+          </h2>
+          <div
+            id="filter-options"
+            class="flex flex-row justify-evenly px-16 mt-14 lg:max-w-[600px] mx-auto lg:gap-6 md:grid md:grid-cols-2">
+            <button
+              class="priceFilter text-base border-mainColor border px-3 py-4 rounded-md hover:bg-mainColor hover:text-white text-black"
+              data-filter="price_all">
+              Всi
+            </button>
+            <button
+              class="priceFilter text-base border-mainColor border px-3 py-4 rounded-md hover:bg-mainColor hover:text-white text-black"
+              data-filter="price_best">
+              Best Price
+            </button>
+            <button
+              class="priceFilter text-base border-mainColor border px-3 py-4 rounded-md hover:bg-mainColor hover:text-white text-black"
+              data-filter="high">
+              High Price
+            </button>
+            <button
+              class="priceFilter text-base border-mainColor border px-3 py-4 rounded-md hover:bg-mainColor hover:text-white text-black"
+              data-filter="medium">
+              Medium
+            </button>
+            <button
+              class="typeFilter text-base border-mainColor border px-3 py-4 rounded-md hover:bg-mainColor hover:text-white text-black"
+              data-filter="low">
+              Low price
+            </button>
+            <button
+              id="clear-filters"
+              class="text-base border-red-500 border px-3 py-4 rounded-md hover:bg-red-400 text-black">
+              Очистити x
+            </button>
           </div>
         </div>
       </section>
@@ -419,12 +489,19 @@
         <h2 class="text-center text-titleText text-[28px] lg:text-xl">
           Оберіть каюту
         </h2>
+        <div
+          id="noResults"
+          style="display: none"
+          class="text-center flex flex-col items-center">
+          <img src="/image/profile-non.png" alt="" />
+          <h3>На жаль за вашим запитом нічого не знайдено</h3>
+        </div>
         <ul id="products" class="flex flex-col gap-4">
-          
-          <li class="flex flex-row gap-3 px-2 py-2 shadow-[0_3px_10px_rgb(0,0,0,0.2)] md:flex-col product-card phone any balkony">
-            <img  src="image/cabin/cabin-1.png" alt="" />
+          <li
+            class="flex flex-row gap-3 px-2 py-2 shadow-[0_3px_10px_rgb(0,0,0,0.2)] md:flex-col all price_all product-card price_best balkony">
+            <img src="image/cabin/cabin-1.png" alt="" />
             <div>
-              <div class="flex flex-col h-full justify-between py-2 px-4 ">
+              <div class="flex flex-col h-full justify-between py-2 px-4">
                 <h3>Каюта з балконом Ellara</h3>
                 <p>Площа приблизно 14-28 кв</p>
                 <p>
@@ -435,9 +512,16 @@
                   фізичними можливостями або обмеженою рухливістю є 2
                   односпальні ліжка, які не можна перетворити на двоспальні.
                 </p>
+                <ul class="flex flex-row flex-wrap gap-1 md:mt-5">
+                  <!-- Можно множить, я все сделал +=) -->
+                  <li
+                    class="cursor-pointer text-xs border bg-slate-100 p-1 rounded hover:bg-slate-200">
+                    З балконом
+                  </li>
+                </ul>
 
                 <hr />
-       
+
                 <div class="w-full text-right flex justify-between">
                   <span class="text-4xl">500$</span>
                   <button
@@ -447,14 +531,13 @@
                   </button>
                 </div>
               </div>
-            
-            </div>
             </div>
           </li>
-          <li class="flex flex-row gap-3 px-2 py-2 shadow-[0_3px_10px_rgb(0,0,0,0.2)] md:flex-col  product-card any suite">
+          <li
+            class="flex flex-row gap-3 px-2 py-2 shadow-[0_3px_10px_rgb(0,0,0,0.2)] md:flex-col product-card all suite low">
             <img src="image/cabin/cabin-2.png" alt="" />
             <div>
-              <div class="flex flex-col h-full justify-between py-2 px-4 ">
+              <div class="flex flex-col h-full justify-between py-2 px-4">
                 <h3>Каюта з балконом Ellara</h3>
                 <p>Площа приблизно 14-28 кв</p>
                 <p>
@@ -467,7 +550,7 @@
                 </p>
 
                 <hr />
-       
+
                 <div class="w-full text-right flex justify-between">
                   <span class="text-4xl">500$</span>
                   <button
@@ -477,12 +560,9 @@
                   </button>
                 </div>
               </div>
-            
-            </div>
             </div>
           </li>
         </ul>
-       
       </section>
 
       <!-- Detals passenger -->
@@ -1294,6 +1374,7 @@
         </section>
       </footer>
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./uikit-3.16.22/js/uikit-icons.js"></script>
     <script src="./uikit-3.16.22/js/uikit.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>

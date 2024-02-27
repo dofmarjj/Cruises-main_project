@@ -735,7 +735,7 @@
 
       <section class="mt-24">
         <div
-          class="relative flex flex-row items-center gap-6 sm:justify-center sm:flex-col">
+          class="relative flex flex-row items-center justify-between sm:justify-center sm:flex-col">
           <img
             class="w-allFrame absolute lg:top-[55px] sm:hidden"
             src="./image/maps/maps.png "
@@ -844,7 +844,10 @@
 
           <!-- Form  -->
 
-          <form id="contact" method="post" class="z-10 lg:mx-[21px]">
+          <form
+            id="contact"
+            method="post"
+            class="z-10 lg:mx-[21px] w-[400px] md:w-auto">
             <h3>На зв'язку</h3>
             <h4 class="font-pathway">
               Вирішимо будь-яке запитання чи проблему
@@ -890,160 +893,84 @@
 
           <!-- Command slider -->
 
-          <div
-            class="absolute uk-visible-toggle uk-light right-0 bottom-1 lg:bottom-20 sm:static sm:mt-10"
-            tabindex="0"
-            uk-slider="autoplay: true;loop; autoplay-interval:4000 ">
-            <ul
-              class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@m uk-grid gap-[12px] md:left-[215px] xs:left-0 command-sl">
+          <div class="team-slider md:mt-5 md:px-2">
+            <ul>
               <li class="border-2 border-mainColor bg-white rounded-xl">
                 <img
                   src="./image/comand/Elelna.png"
                   alt=""
-                  class="bg-gray-400 w-full" />
+                  class="bg-gray-400 w-full rounded-xl" />
                 <div class="py-2 flex flex-col gap-1 items-center">
                   <p class="text-[#212529] text-sm">Олена</p>
-                  <span class="text-[#504D4D] font-pathway text-xs"
+                  <span
+                    class="text-[#504D4D] font-pathway text-xs md:text-center"
                     >Власниця круїзної компанії.</span
                   >
                 </div>
               </li>
               <li class="border-2 border-mainColor bg-white rounded-xl">
                 <img
-                  src="./image/comand/Team-1.png"
+                  src="./image/comand/Elelna.png"
                   alt=""
-                  class="bg-gray-400 w-full" />
+                  class="bg-gray-400 w-full rounded-xl" />
                 <div class="py-2 flex flex-col gap-1 items-center">
                   <p class="text-[#212529] text-sm">Олена</p>
-                  <span class="text-[#504D4D] font-pathway text-xs"
+                  <span
+                    class="text-[#504D4D] font-pathway text-xs md:text-center"
                     >Власниця круїзної компанії.</span
                   >
                 </div>
               </li>
               <li class="border-2 border-mainColor bg-white rounded-xl">
                 <img
-                  src="./image/comand/Team-1.png"
+                  src="./image/comand/Elelna.png"
                   alt=""
-                  class="bg-gray-400 w-full" />
+                  class="bg-gray-400 w-full rounded-xl" />
                 <div class="py-2 flex flex-col gap-1 items-center">
                   <p class="text-[#212529] text-sm">Олена</p>
-                  <span class="text-[#504D4D] font-pathway text-xs"
+                  <span
+                    class="text-[#504D4D] font-pathway text-xs md:text-center"
                     >Власниця круїзної компанії.</span
                   >
                 </div>
               </li>
               <li class="border-2 border-mainColor bg-white rounded-xl">
                 <img
-                  src="./image/comand/Team-1.png"
+                  src="./image/comand/Elelna.png"
                   alt=""
-                  class="bg-gray-400 w-full" />
+                  class="bg-gray-400 w-full rounded-xl" />
                 <div class="py-2 flex flex-col gap-1 items-center">
                   <p class="text-[#212529] text-sm">Олена</p>
-                  <span class="text-[#504D4D] font-pathway text-xs"
+                  <span
+                    class="text-[#504D4D] font-pathway text-xs md:text-center"
                     >Власниця круїзної компанії.</span
                   >
                 </div>
               </li>
-              <li
-                class="border-2 border-mainColor bg-white rounded-xl hidden sm:block">
+              <li class="border-2 border-mainColor bg-white rounded-xl">
                 <img
-                  src="./image/comand/Team-1.png"
+                  src="./image/comand/Elelna.png"
                   alt=""
-                  class="bg-gray-400 w-full" />
+                  class="bg-gray-400 w-full rounded-xl" />
                 <div class="py-2 flex flex-col gap-1 items-center">
                   <p class="text-[#212529] text-sm">Олена</p>
-                  <span class="text-[#504D4D] font-pathway text-xs"
+                  <span
+                    class="text-[#504D4D] font-pathway text-xs md:text-center"
                     >Власниця круїзної компанії.</span
                   >
                 </div>
               </li>
             </ul>
-
-            <a
-              class="uk-position-center-left uk-position-small uk-hidden-hover"
-              href="#"
-              uk-slidenav-previous
-              uk-slider-item="previous"></a>
-            <a
-              class="uk-position-center-right uk-position-small uk-hidden-hover"
-              href="#"
-              uk-slidenav-next
-              uk-slider-item="next"></a>
+            <button class="prev md:hidden"><</button>
+            <button class="next md:hidden">></button>
           </div>
-          <!-- <div
-            class="absolute uk-visible-toggle uk-light right-0 bottom-1 md:hidden lg:bottom-20"
-            tabindex="-1"
-            uk-slider="autoplay: true; autoplay-interval:4000 ">
-            <ul
-              class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@m uk-grid gap-[12px]">
-              <li class="border-2 border-mainColor bg-white rounded-xl lg:w-4">
-                <img
-                  src="./image/comand/Elelna.png"
-                  alt=""
-                  class="bg-gray-400 w-full" />
-                <div class="py-2 flex flex-col gap-1 items-center">
-                  <p class="text-[#212529] text-sm">Олена</p>
-                  <span class="text-[#504D4D] font-pathway text-xs"
-                    >Власниця круїзної компанії.</span
-                  >
-                </div>
-              </li>
-              <li class="border-2 border-mainColor bg-white rounded-xl">
-                <img
-                  src="./image/comand/Team-1.png"
-                  alt=""
-                  class="bg-gray-400 w-full" />
-                <div class="py-2 flex flex-col gap-1 items-center">
-                  <p class="text-[#212529] text-sm">Олена</p>
-                  <span class="text-[#504D4D] font-pathway text-xs"
-                    >Власниця круїзної компанії.</span
-                  >
-                </div>
-              </li>
-              <li class="border-2 border-mainColor bg-white rounded-xl">
-                <img
-                  src="./image/comand/Team-1.png"
-                  alt=""
-                  class="bg-gray-400 w-full" />
-                <div class="py-2 flex flex-col gap-1 items-center">
-                  <p class="text-[#212529] text-sm">Олена</p>
-                  <span class="text-[#504D4D] font-pathway text-xs"
-                    >Власниця круїзної компанії.</span
-                  >
-                </div>
-              </li>
-              <li class="border-2 border-mainColor bg-white rounded-xl">
-                <img
-                  src="./image/comand/Team-1.png"
-                  alt=""
-                  class="bg-gray-400 w-full" />
-                <div class="py-2 flex flex-col gap-1 items-center">
-                  <p class="text-[#212529] text-sm">Олена</p>
-                  <span class="text-[#504D4D] font-pathway text-xs"
-                    >Власниця круїзної компанії.</span
-                  >
-                </div>
-              </li>
-            </ul>
-
-            <a
-              class="uk-position-center-left uk-position-small uk-hidden-hover"
-              href="#"
-              uk-slidenav-previous
-              uk-slider-item="previous"></a>
-            <a
-              class="uk-position-center-right uk-position-small uk-hidden-hover"
-              href="#"
-              uk-slidenav-next
-              uk-slider-item="next"></a>
-          </div> -->
         </div>
       </section>
 
       <!-- News -->
 
       <section
-        class="container my-24 flex flex-col items-center py-20 px-20 sm:px-0 sm:pl-5 lg:mb-0">
+        class="container my-24 flex flex-col items-center py-20 px-20 md:my-5 sm:px-0 sm:pl-5 lg:mb-0">
         <h2 class="mb-16 text-4xl font-normal text-titleText lg:text-2xl">
           Новини
         </h2>
@@ -1868,5 +1795,6 @@
     </script>
     <script src="./js/main.js"></script>
     <script src="/js/slider.js"></script>
+    <script src="/js/slider_2.js"></script>
   </body>
 </html>

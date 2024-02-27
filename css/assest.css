@@ -249,3 +249,63 @@ ul {
 .command-sl li {
   padding: 0;
 }
+
+.team-slider {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+
+  /* touch-action: pan-y; */
+}
+.team-slider ul {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  transition: transform 0.5s ease;
+}
+.team-slider li {
+  flex: 0 0 33%; /* Каждый слайд будет занимать 1/3 ширины слайдера */
+  list-style: none;
+  overflow: hidden;
+}
+/* Стили для изображений в слайдере */
+.team-slider img {
+  max-width: 100%; /* Изображение будет адаптироваться к размеру слайда */
+  height: auto;
+}
+/* Стили для кнопок управления */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.prev {
+  left: 0;
+}
+.next {
+  right: 0;
+}
+
+.swiper-container-comand {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-container-comand .swiper-slide-next {
+  font-size: 16px;
+  margin-left: 0 !important;
+}
+.swiper-container-comand .swiper-slide-prev {
+  /* margin-right: 20px !important; */
+  margin-right: 20 !important;
+  margin-left: 0 !important;
+}
