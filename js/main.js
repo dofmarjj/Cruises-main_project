@@ -107,3 +107,13 @@ function toggleClass(button) {
   button.classList.toggle("text-white");
   button.classList.toggle("btn-on");
 }
+
+function changeActiveState(element) {
+  var blocks = document.querySelectorAll(".card");
+  blocks.forEach(function (block) {
+    block.classList.remove("border-mainColor");
+    block.setAttribute("data-active", "0");
+  });
+  element.classList.add("border-mainColor");
+  element.setAttribute("data-active", "1");
+}

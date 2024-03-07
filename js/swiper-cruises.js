@@ -1,6 +1,6 @@
 // Инициализируем Swiper с необходимыми параметрами
 var swiper = new Swiper(".swiper-container-comand", {
-  slidesPerView: "auto",
+  slidesPerView: 3,
   spaceBetween: 20,
   loop: true,
   mousewheel: true,
@@ -19,9 +19,6 @@ var swiper = new Swiper(".swiper-container-comand", {
       slidesPerView: 1,
     },
     // Настройки для десктопных устройств
-    992: {
-      slidesPerView: 3,
-    },
   },
 });
 

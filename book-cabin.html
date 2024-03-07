@@ -498,7 +498,9 @@
         </div>
         <ul id="products" class="flex flex-col gap-4">
           <li
-            class="flex flex-row gap-3 px-2 py-2 shadow-[0_3px_10px_rgb(0,0,0,0.2)] md:flex-col all price_all product-card price_best balkony">
+            class="flex flex-row gap-3 px-2 py-2 shadow-[0_3px_10px_rgb(0,0,0,0.2)] border-2 md:flex-col card all price_all product-card price_best balkony"
+            data-active="0"
+            onclick="changeActiveState(this)">
             <img src="image/cabin/cabin-1.png" alt="" />
             <div>
               <div class="flex flex-col h-full justify-between py-2 px-4">
@@ -525,7 +527,7 @@
                 <div class="w-full text-right flex justify-between">
                   <span class="text-4xl">500$</span>
                   <button
-                    onclick="duplicateDivNTimes()"
+                    onclick=""
                     class="py-[15px] px-[30px] text-black border border-mainColor rounded-xl hover:bg-mainColor lg:py-2 lg:px-3 xs:text-xs">
                     Обрати
                   </button>
@@ -534,7 +536,9 @@
             </div>
           </li>
           <li
-            class="flex flex-row gap-3 px-2 py-2 shadow-[0_3px_10px_rgb(0,0,0,0.2)] md:flex-col product-card all suite low">
+            class="flex flex-row gap-3 px-2 py-2 shadow-[0_3px_10px_rgb(0,0,0,0.2)] border-2 md:flex-col card product-card all suite low"
+            data-active="0"
+            onclick="changeActiveState(this)">
             <img src="image/cabin/cabin-2.png" alt="" />
             <div>
               <div class="flex flex-col h-full justify-between py-2 px-4">
